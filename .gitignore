@@ -1,0 +1,9 @@
+# Untuk bagian uji coba/eksperimen
+lab/
+
+# Untuk folder proyek implementasi ( C#/.NET )
+obj/
+bin/
+
+# Untuk VS Code
+.vscode/
