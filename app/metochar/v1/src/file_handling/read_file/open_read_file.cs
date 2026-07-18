@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using v1.src.file_handling.read_file;
 using System.Collections.Concurrent;
+using System.Collections.ObjectModel;
 
 namespace v1.src.file_handling.read_file
 {
@@ -13,14 +14,15 @@ namespace v1.src.file_handling.read_file
          * Tempat menampung data 
         */
         private static ConcurrentDictionary<string, string> data_scan_result = new ConcurrentDictionary<string, string>(); 
-        private static string[] _files_list;
-        public static string[] files_list
-        {
-            get
-            {
-                return _files_list;
-            }
-        }
+        private string[] _files_list;
+        // public  string[] files_list
+        // {
+        //     get
+        //     {
+        //         return _files_list;
+        //     }
+        // }
+        public ReadOnlyCollection<string> files_list => Array.AsReadOnly(_files_list);
 
         public Open_Read_File(string[] file_list)
         {
@@ -67,12 +69,12 @@ namespace v1.src.file_handling.read_file
             );
         }
 
-        public static void Data_Check()
-        {
-            foreach (KeyValuePair<string, string> data in data_scan_result)
-            {
-                Console.WriteLine($"{data.Key} = {data.Value}");    
-            }
-        }
+        // public static void Data_Check()
+        // {
+        //     foreach (KeyValuePair<string, string> data in data_scan_result)
+        //     {
+        //         Console.WriteLine($"{data.Key} = {data.Value}");    
+        //     }
+        // }
     }
 }

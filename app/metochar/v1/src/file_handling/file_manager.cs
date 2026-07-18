@@ -56,7 +56,7 @@ namespace v1.src.file_handling
              * Mengirim data yang sudah disortir
             */
             _read_file_obj = new Open_Read_File(read_file_list.ToArray());
-            _extract_file_obj = new Open_Extract_File();
+            _extract_file_obj = new Open_Extract_File(extract_file_list.ToArray());
         }
 
         private static async Task _Process_Managing()
@@ -64,12 +64,19 @@ namespace v1.src.file_handling
             Task read_process = Task.Run(() =>
             {
                 _read_file_obj.Scanning_Files();
-            }); 
+            });
+            Task extract_process = Task.Run(() =>
+            {
+                _extract_file_obj.Extraction_Manager();
+            });
+            
+            /*
+             * Menunggu semua proses selesai untuk melanjutkan ke prooses berikutnya 
+             * : Parsing data menjadi file .json
+            */
+            await Task.WhenAll(read_process, extract_process);
 
-
-            await Task.WhenAll(read_process);
-
-            Open_Read_File.Data_Check();
+            // Open_Read_File.Data_Check();
         }
     }
 }

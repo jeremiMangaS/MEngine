@@ -5,5 +5,8 @@ lab/
 obj/
 bin/
 
+# Untuk folder eksternal
+external_tools/
+
 # Untuk VS Code
 .vscode/

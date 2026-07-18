@@ -14,8 +14,8 @@ namespace v1
              *
              *
             */
-            // string path = """..\..\..\lab\char_lab\fdio""";
-            string path = """..\..\..\lab\char_lab\GokuVynStyleP""";
+            string path = """..\..\..\lab\char_lab\fdio""";
+            // string path = """..\..\..\lab\char_lab\GokuVynStyleP""";
             // string path = """..\..\..\lab\char_lab\karin""";
             // string path = """..\..\..\lab\char_lab\Kratos_KOF""";
             // string path = """..\..\..\lab\char_lab\Naruto Sennin""";

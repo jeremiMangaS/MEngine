@@ -78,3 +78,11 @@ MECr bekerja dengan beberapa langkah, diantaranya :
     - Pal.Defaults    = int[]
     - portraitscale   = float
     - localcoord      = x, y (Default : 320, 240)   
+
+**Ekstraksi Asset**
+- File SFF  ( Sprite File Format )
+    - Menggunakan tools eksternal untuk mengekstrak file .sff menjadi .png, atau dalam kasus lain aakan menghasilkan .pcx ( untuk versi karakter yang lama ).
+    Tools yang digunakan : `SFF Decompiler Version 2.1.3`
+    - Jika ekstraksi awal menghasilkan file .pcx, maka akan dilanjutkan dengan ekstraksi selanjutnya untuk mengonversi file .pcx menjadi .png
+    Tools yang digunakan : `ImageSharp Version 4.0.0 ( From SixLabors )`
+    - Tiap metadata yang diambil dari tiap sprite baik itu axiz x dan y, group, index, dan lain sebagainya, akan disimpan ke dalam file .json
